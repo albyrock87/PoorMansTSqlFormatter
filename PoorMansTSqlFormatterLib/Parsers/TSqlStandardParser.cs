@@ -466,6 +466,7 @@ namespace PoorMansTSqlFormatterLib.Parsers
                                 && !ContentStartsWithKeyword(sqlTree.CurrentContainer, "SET")
                                 )
                             {
+                                sqlTree.EscapeJoinCondition();
                                 sqlTree.StartNewContainer(SqlXmlConstants.ENAME_JOIN_ON_SECTION, token.Value, SqlXmlConstants.ENAME_CONTAINER_GENERALCONTENT);
                             }
                             else
